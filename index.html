@@ -1,117 +1,247 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Juventus Futsal Chapadinha</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; background:#0b0b0b; color:#fff; }
-    header { background:#000; padding:20px; text-align:center; }
-    header h1 { margin:0; color:#f1c40f; }
-    nav { text-align:center; background:#111; padding:10px; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-    section { padding:40px; }
-    .container { max-width:1000px; margin:auto; }
-    .galeria { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; }
-    .galeria img { width:100%; border-radius:10px; }
-    h2 { color:#f1c40f; }
-    h3 { margin-top:30px; }
-    footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juventus Futsal Chapadinha</title>
+
+<style>
+body { font-family: Arial; margin:0; background:#0b0b0b; color:#fff; }
+
+header { background:#000; padding:20px; text-align:center; }
+header h1 { margin:0; color:#f1c40f; }
+
+nav { text-align:center; background:#111; padding:10px; }
+nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
+
+section { padding:40px; }
+.container { max-width:1000px; margin:auto; }
+
+h2 { color:#f1c40f; }
+
+details { margin-bottom:20px; }
+summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
+
+/* GALERIA */
+.galeria {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.galeria div {
+  overflow:hidden;
+  border-radius:10px;
+}
+
+.galeria img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  cursor:pointer;
+  transition:0.4s;
+}
+
+.galeria img:hover {
+  transform:scale(1.15);
+}
+
+/* LIGHTBOX */
+.lightbox {
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(0,0,0,0.95);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.lightbox.active { display:flex; }
+
+.lightbox img {
+  max-width:90%;
+  max-height:80%;
+  border-radius:10px;
+}
+
+/* BOTÕES */
+.close, .prev, .next {
+  position:absolute;
+  color:#fff;
+  font-size:35px;
+  cursor:pointer;
+  user-select:none;
+}
+
+.close { top:20px; right:30px; }
+.prev { left:20px; }
+.next { right:20px; }
+
+footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Juventus Futsal</h1>
-  <p>Chapadinha - MA</p>
+<h1>Juventus Futsal</h1>
+<p>Chapadinha - MA</p>
 </header>
 
 <nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#titulos">Títulos</a>
-  <a href="#galeria">Galeria</a>
+<a href="#sobre">Sobre</a>
+<a href="#titulos">Títulos</a>
+<a href="#galeria">Galeria</a>
 </nav>
 
 <section id="sobre">
-  <div class="container">
-    <h2>Sobre o Clube</h2>
-    <p>O Juventus Futsal de Chapadinha representa nossa cidade com orgulho, dedicação e paixão pelo futsal. Sempre buscando crescer e conquistar novos títulos.</p>
-  </div>
+<div class="container">
+<h2>Sobre o Clube</h2>
+<p>O Juventus Futsal de Chapadinha representa nossa cidade com orgulho, dedicação e paixão pelo futsal.</p>
+</div>
 </section>
 
 <section id="titulos">
-  <div class="container">
-    <h2>Títulos</h2>
-    <ul>
-      <li>🏆 Campeão - Taça Cidade 2025</li>
-      <li>🏆 Campeão - Taça Cidade 2026</li>
-      <li>🥈 Vice - Taça Elton Barros</li>
-      <li>🥈 Vice - Campeonato Trizidela</li>
-    </ul>
-  </div>
+<div class="container">
+<h2>Títulos</h2>
+<ul>
+<li>🏆 Campeão - Taça Cidade 2025</li>
+<li>🏆 Campeão - Taça Cidade 2026</li>
+<li>🥈 Vice - Taça Elton Barros</li>
+<li>🥈 Vice - Campeonato Trizidela</li>
+</ul>
+</div>
 </section>
 
 <section id="galeria">
-  <div class="container">
-    <h2>Galeria</h2>
+<div class="container">
+<h2>Galeria</h2>
 
-    <h3>Taça Cidade 2025</h3>
-    <div class="galeria">
-       <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20251.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20252.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20253.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20254.jpeg"> 
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20255.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20256.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20257.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20258.jpeg">
-    </div>
+<!-- 2025 -->
+<details>
+<summary>Taça Cidade 2025</summary>
+<div class="galeria">
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20251.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20252.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20253.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20254.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20255.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20256.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20257.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20258.jpeg" onclick="openImg(this)"></div>
+</div>
+</details>
 
-    <h3>Taça Cidade 2026</h3>
-    <div class="galeria">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20261w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20262w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20263w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20264w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20265w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202646w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202647w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20268w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20269w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202610w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202611w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202612w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202613w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202614w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202615w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202616w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202617w.jpeg">
-  <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202618w.jpeg">
-    </div>
+<!-- 2026 -->
+<details>
+<summary>Taça Cidade 2026</summary>
+<div class="galeria">
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20261w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20262w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20263w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20264w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20265w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20268w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade20269w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202610w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202611w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202612w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202613w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202614w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202615w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202616w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202617w.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacacidade202618w.jpeg" onclick="openImg(this)"></div>
+</div>
+</details>
 
-    <h3>Taça Elton Barros</h3>
-    <div class="galeria">
-      <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros.jpg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros1.jpg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros2.jpg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros4.jpeg">
-    </div>
+<!-- ELTON BARROS -->
+<details>
+<summary>Taça Elton Barros</summary>
+<div class="galeria">
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros.jpg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros1.jpg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros2.jpg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/tacaeltonbarros4.jpeg" onclick="openImg(this)"></div>
+</div>
+</details>
 
-    <h3>Campeonato Trizidela</h3>
-    <div class="galeria">
-      <img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela1.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela2.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela4.jpeg">
-<img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela5.jpeg">
-    </div>
+<!-- TRIZIDELA -->
+<details>
+<summary>Campeonato Trizidela</summary>
+<div class="galeria">
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela1.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela2.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela4.jpeg" onclick="openImg(this)"></div>
+<div><img src="https://raw.githubusercontent.com/juventusfutsalchapadinha/juventus-futsal-site/main/trizidela5.jpeg" onclick="openImg(this)"></div>
+</div>
+</details>
 
-  </div>
+</div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeImg()">✖</span>
+<span class="prev" onclick="changeImg(-1)">❮</span>
+<img id="lightbox-img">
+<span class="next" onclick="changeImg(1)">❯</span>
+</div>
+
+</div>
 </section>
 
 <footer>
-  <p>© 2026 Juventus Futsal Chapadinha</p>
+<p>© 2026 Juventus Futsal Chapadinha</p>
 </footer>
+
+<script>
+let images = [];
+let current = 0;
+let startX = 0;
+
+function openImg(img){
+  images = Array.from(document.querySelectorAll('.galeria img'));
+  current = images.indexOf(img);
+  document.getElementById('lightbox').classList.add('active');
+  showImg();
+}
+
+function showImg(){
+  document.getElementById('lightbox-img').src = images[current].src;
+}
+
+function closeImg(){
+  document.getElementById('lightbox').classList.remove('active');
+}
+
+function changeImg(step){
+  current += step;
+  if(current < 0) current = images.length-1;
+  if(current >= images.length) current = 0;
+  showImg();
+}
+
+/* SWIPE CELULAR */
+const lightbox = document.getElementById("lightbox");
+
+lightbox.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e=>{
+  let endX = e.changedTouches[0].clientX;
+  if(startX - endX > 50) changeImg(1);
+  if(endX - startX > 50) changeImg(-1);
+});
+
+/* FECHAR CLICANDO FORA */
+lightbox.addEventListener("click", e=>{
+  if(e.target.id === "lightbox") closeImg();
+});
+</script>
 
 </body>
 </html>
-
