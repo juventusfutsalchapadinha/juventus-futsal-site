@@ -22,7 +22,7 @@ h2 { color:#f1c40f; }
 details { margin-bottom:20px; }
 summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 
-/* GALERIA /
+/* GALERIA PADRONIZADA */
 .galeria {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -30,6 +30,8 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 }
 
 .galeria div {
+  width:100%;
+  height:200px;
   overflow:hidden;
   border-radius:10px;
 }
@@ -43,14 +45,16 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 }
 
 .galeria img:hover {
-  transform:scale(1.15);
+  transform:scale(1.1);
 }
 
-/ LIGHTBOX /
+/* LIGHTBOX */
 .lightbox {
   position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background:rgba(0,0,0,0.95);
   display:none;
   justify-content:center;
@@ -66,7 +70,7 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
   border-radius:10px;
 }
 
-/ BOTÕES /
+/* BOTÕES */
 .close, .prev, .next {
   position:absolute;
   color:#fff;
@@ -78,57 +82,67 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 .prev { left:20px; }
 .next { right:20px; }
 
-/ PATROCINADORES MELHORADO */
+/* PATROCINADORES */
 #patrocinadores .galeria div {
+  height:120px;
   background:#fff;
-  padding:10px;
-  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 #patrocinadores img {
+  max-width:100%;
+  max-height:100%;
   object-fit:contain;
 }
 
-footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
+footer {
+  background:#000;
+  text-align:center;
+  padding:20px;
+  margin-top:30px;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-<h1>Juventus Futsal</h1>
-<p>Chapadinha - MA</p>
+  <h1>Juventus Futsal</h1>
+  <p>Chapadinha - MA</p>
 </header>
 
 <nav>
-<a href="#sobre">Sobre</a>
-<a href="#titulos">Títulos</a>
-<a href="#galeria">Galeria</a>
-<a href="#patrocinadores">Patrocinadores</a>
+  <a href="#sobre">Sobre</a>
+  <a href="#titulos">Títulos</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#patrocinadores">Patrocinadores</a>
 </nav>
 
 <section id="sobre">
-<div class="container">
-<h2>Sobre o Clube</h2>
-<p>O Juventus Futsal de Chapadinha representa nossa cidade com orgulho, dedicação e paixão pelo futsal.</p>
-</div>
+  <div class="container">
+    <h2>Sobre o Clube</h2>
+    <p>O Juventus Futsal de Chapadinha representa nossa cidade com orgulho, dedicação e paixão pelo futsal.</p>
+  </div>
 </section>
 
 <section id="titulos">
-<div class="container">
-<h2>Títulos</h2>
-<ul>
-<li>🏆 Campeão - Taça Cidade 2025</li>
-<li>🏆 Campeão - Taça Cidade 2026</li>
-<li>🥈 Vice - Taça Elton Barros</li>
-<li>🥈 Vice - Campeonato Trizidela</li>
-</ul>
-</div>
+  <div class="container">
+    <h2>Títulos</h2>
+    <ul>
+      <li>🏆 Campeão - Taça Cidade 2025</li>
+      <li>🏆 Campeão - Taça Cidade 2026</li>
+      <li>🥈 Vice - Taça Elton Barros</li>
+      <li>🥈 Vice - Campeonato Trizidela</li>
+    </ul>
+  </div>
 </section>
 
-<section id="titulos">
+<section id="galeria">
 <div class="container">
-<h2>Títulos</h2>
+<h2>Galeria</h2>
+
 
 
 <!-- 2025 -->
@@ -212,47 +226,11 @@ footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
 <div><img src="PAT10.jpeg" onclick="openImg(this)"></div>
 </div>
 
-</div>
 </section>
 
 <footer>
 <p>©️ 2026 Juventus Futsal Chapadinha</p>
 </footer>
-
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-<span class="close" onclick="closeImg()">✖</span>
-<span class="prev" onclick="changeImg(-1)">❮</span>
-<img id="lightbox-img">
-<span class="next" onclick="changeImg(1)">❯</span>
-</div>
-
-<script>
-let images = [];
-let current = 0;
-
-function openImg(img){
-  images = Array.from(document.querySelectorAll('.galeria img'));
-  current = images.indexOf(img);
-  document.getElementById('lightbox').classList.add('active');
-  showImg();
-}
-
-function showImg(){
-  document.getElementById('lightbox-img').src = images[current].src;
-}
-
-function closeImg(){
-  document.getElementById('lightbox').classList.remove('active');
-}
-
-function changeImg(step){
-  current += step;
-  if(current < 0) current = images.length-1;
-  if(current >= images.length) current = 0;
-  showImg();
-}
-</script>
 
 </body>
 </html>
