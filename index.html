@@ -22,7 +22,7 @@ h2 { color:#f1c40f; }
 details { margin-bottom:20px; }
 summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 
-/* GALERIA */
+/* GALERIA /
 .galeria {
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
@@ -46,7 +46,7 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
   transform:scale(1.15);
 }
 
-/* LIGHTBOX */
+/ LIGHTBOX /
 .lightbox {
   position:fixed;
   top:0; left:0;
@@ -66,7 +66,7 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
   border-radius:10px;
 }
 
-/* BOTÕES */
+/ BOTÕES /
 .close, .prev, .next {
   position:absolute;
   color:#fff;
@@ -78,10 +78,14 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
 .prev { left:20px; }
 .next { right:20px; }
 
-/* PATROCINADORES */
-#patrocinadores img {
+/ PATROCINADORES MELHORADO */
+#patrocinadores .galeria div {
   background:#fff;
   padding:10px;
+  border-radius:10px;
+}
+
+#patrocinadores img {
   object-fit:contain;
 }
 
@@ -122,10 +126,10 @@ footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
 </div>
 </section>
 
-
-<section id="galeria">
+<section id="titulos">
 <div class="container">
-<h2>Galeria</h2>
+<h2>Títulos</h2>
+
 
 <!-- 2025 -->
 <details>
@@ -189,29 +193,30 @@ footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
 
 </div>
 </section>
+
 <!-- PATROCINADORES -->
 <section id="patrocinadores">
 <div class="container">
 <h2>PATROCINADORES</h2>
 
 <div class="galeria">
-<div><img src="PAT1.jpeg"></div>
-<div><img src="PAT2.jpeg"></div>
-<div><img src="PAT3.jpeg"></div>
-<div><img src="PAT4.jpeg"></div>
-<div><img src="PAT5.jpeg"></div>
-<div><img src="PAT6.jpeg"></div>
-<div><img src="PAT7.jpeg"></div>
-<div><img src="PAT8.jpeg"></div>
-<div><img src="PAT9.jpeg"></div>
-<div><img src="PAT10.jpeg"></div>
+<div><img src="PAT1.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT2.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT3.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT4.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT5.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT6.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT7.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT8.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT9.jpeg" onclick="openImg(this)"></div>
+<div><img src="PAT10.jpeg" onclick="openImg(this)"></div>
 </div>
 
 </div>
 </section>
 
 <footer>
-<p>© 2026 Juventus Futsal Chapadinha</p>
+<p>©️ 2026 Juventus Futsal Chapadinha</p>
 </footer>
 
 <!-- LIGHTBOX -->
