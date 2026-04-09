@@ -72,12 +72,18 @@ summary { cursor:pointer; font-weight:bold; font-size:18px; color:#f1c40f; }
   color:#fff;
   font-size:35px;
   cursor:pointer;
-  user-select:none;
 }
 
 .close { top:20px; right:30px; }
 .prev { left:20px; }
 .next { right:20px; }
+
+/* PATROCINADORES */
+#patrocinadores img {
+  background:#fff;
+  padding:10px;
+  object-fit:contain;
+}
 
 footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
 </style>
@@ -94,14 +100,13 @@ footer { background:#000; text-align:center; padding:20px; margin-top:30px; }
 <a href="#sobre">Sobre</a>
 <a href="#titulos">Títulos</a>
 <a href="#galeria">Galeria</a>
+<a href="#patrocinadores">Patrocinadores</a>
 </nav>
 
 <section id="sobre">
 <div class="container">
 <h2>Sobre o Clube</h2>
-<p>O Juventus Futsal de Chapadinha é um orgulho para o nosso município, representando nossa cidade com dedicação, garra e paixão pelo futsal. Somos uma equipe que busca constantemente evoluir dentro e fora de quadra, sempre com o objetivo de conquistar novos títulos e levar o nome de Chapadinha cada vez mais longe.
-
-Hoje, o Juventus Futsal trabalha com foco no crescimento e na profissionalização do time, buscando disputar competições de maior nível. Para isso, contamos com o apoio de patrocinadores e do poder público, fundamentais para fortalecer nosso projeto e ampliar nossas conquistas no cenário esportivo.</p>
+<p>O Juventus Futsal de Chapadinha representa nossa cidade com orgulho, dedicação e paixão pelo futsal.</p>
 </div>
 </section>
 
@@ -116,6 +121,7 @@ Hoje, o Juventus Futsal trabalha com foco no crescimento e na profissionalizaç�
 </ul>
 </div>
 </section>
+
 
 <section id="galeria">
 <div class="container">
@@ -183,13 +189,22 @@ Hoje, o Juventus Futsal trabalha com foco no crescimento e na profissionalizaç�
 
 </div>
 </section>
+<!-- PATROCINADORES -->
+<section id="patrocinadores">
+<div class="container">
+<h2>PATROCINADORES</h2>
 
-<!-- LIGHTBOX -->
-<div class="lightbox" id="lightbox">
-<span class="close" onclick="closeImg()">✖</span>
-<span class="prev" onclick="changeImg(-1)">❮</span>
-<img id="lightbox-img">
-<span class="next" onclick="changeImg(1)">❯</span>
+<div class="galeria">
+<div><img src="PAT1.jpeg"></div>
+<div><img src="PAT2.jpeg"></div>
+<div><img src="PAT3.jpeg"></div>
+<div><img src="PAT4.jpeg"></div>
+<div><img src="PAT5.jpeg"></div>
+<div><img src="PAT6.jpeg"></div>
+<div><img src="PAT7.jpeg"></div>
+<div><img src="PAT8.jpeg"></div>
+<div><img src="PAT9.jpeg"></div>
+<div><img src="PAT10.jpeg"></div>
 </div>
 
 </div>
@@ -199,10 +214,17 @@ Hoje, o Juventus Futsal trabalha com foco no crescimento e na profissionalizaç�
 <p>© 2026 Juventus Futsal Chapadinha</p>
 </footer>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+<span class="close" onclick="closeImg()">✖</span>
+<span class="prev" onclick="changeImg(-1)">❮</span>
+<img id="lightbox-img">
+<span class="next" onclick="changeImg(1)">❯</span>
+</div>
+
 <script>
 let images = [];
 let current = 0;
-let startX = 0;
 
 function openImg(img){
   images = Array.from(document.querySelectorAll('.galeria img'));
@@ -225,24 +247,6 @@ function changeImg(step){
   if(current >= images.length) current = 0;
   showImg();
 }
-
-/* SWIPE CELULAR */
-const lightbox = document.getElementById("lightbox");
-
-lightbox.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-});
-
-lightbox.addEventListener("touchend", e=>{
-  let endX = e.changedTouches[0].clientX;
-  if(startX - endX > 50) changeImg(1);
-  if(endX - startX > 50) changeImg(-1);
-});
-
-/* FECHAR CLICANDO FORA */
-lightbox.addEventListener("click", e=>{
-  if(e.target.id === "lightbox") closeImg();
-});
 </script>
 
 </body>
